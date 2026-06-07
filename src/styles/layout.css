@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500;700&display=swap");
+
+:root {
+  --ink: #172333;
+  --muted: #65758a;
+  --blue: #4d8dff;
+  --blue-soft: rgba(77, 141, 255, 0.1);
+  --aqua: #6edbd0;
+  --green: #93e7bf;
+  --pink: #ffe7f1;
+  --lavender: #e3e5ff;
+  --warning: #ff9f75;
+  --line: rgba(93, 121, 156, 0.16);
+  --shadow: 0 22px 70px rgba(58, 91, 134, 0.12);
+  --blur: blur(24px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(200, 244, 223, 0.82), transparent 22rem),
+    radial-gradient(circle at 86% 8%, rgba(226, 229, 255, 0.9), transparent 25rem),
+    radial-gradient(circle at 88% 72%, rgba(255, 231, 241, 0.68), transparent 22rem),
+    linear-gradient(135deg, #fbfdff, #f0f7ff 44%, #fbfdff);
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.nav,
+.hero,
+.methods,
+.detail,
+.footer {
+  width: min(1160px, calc(100% - 32px));
+  margin: 26px auto 0;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow);
+}
+
+main > section,
+footer,
+.nav {
+  animation: sectionReveal 420ms ease both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 22%;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0.55;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-padding-top: 110px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

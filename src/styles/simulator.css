@@ -1,0 +1,301 @@
+.interactiveCard {
+  display: grid;
+  gap: 18px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: #50657c;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 15px 16px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(77, 141, 255, 0.45);
+  box-shadow: 0 0 0 4px rgba(77, 141, 255, 0.08);
+}
+
+.visualBlock,
+.tableBlock,
+.resultBox,
+.strandBox,
+.comparison,
+.formulaBox,
+.placeholderSimulation {
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.76);
+}
+
+.miniTitle {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pillWrap,
+.baseLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.kmerPill,
+.base {
+  min-width: 42px;
+  min-height: 38px;
+  display: inline-grid;
+  place-items: center;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(77, 141, 255, 0.08);
+  color: #3f6eaa;
+  font-weight: 800;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.base {
+  min-width: 34px;
+  min-height: 34px;
+  border-radius: 12px;
+}
+
+.base.hit {
+  background: rgba(147, 231, 191, 0.42);
+  color: #16785d;
+}
+
+.base.mismatch {
+  background: rgba(255, 159, 117, 0.28);
+  color: #a24b2c;
+}
+
+.base.complement {
+  background: rgba(226, 229, 255, 0.78);
+  color: #4b5aa8;
+}
+
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(93, 121, 156, 0.12);
+  color: #50657c;
+}
+
+.tableRow:last-child {
+  border-bottom: 0;
+}
+
+.tableRow b {
+  color: var(--ink);
+}
+
+.resultBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+}
+
+.resultBox strong {
+  color: var(--ink);
+}
+
+.resultBox span {
+  color: var(--blue);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.comparison,
+.strandBox {
+  display: grid;
+  gap: 12px;
+}
+
+.skewChart {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.skewBar {
+  width: 8px;
+  display: inline-block;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+.skewBar.negative {
+  background: var(--warning);
+}
+
+.mutedText {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 1060px) {
+  .hero,
+  .detailLayout,
+  .sectionHeader,
+  .detailHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .methodTabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer a {
+    display: inline-block;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 680px) {
+  .nav {
+    position: relative;
+    top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+  }
+
+  .hero,
+  .methods,
+  .detail,
+  .footer {
+    width: min(100% - 20px, 1160px);
+    padding: 28px;
+    border-radius: 30px;
+  }
+
+  .methodTabs {
+    grid-template-columns: 1fr;
+  }
+
+  .resultBox {
+    display: grid;
+  }
+}
+
+.simulationArea {
+  position: relative;
+  overflow: hidden;
+}
+
+.simulationArea::before {
+  content: "";
+  position: absolute;
+  right: -90px;
+  top: -90px;
+  width: 230px;
+  height: 230px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(110, 219, 208, 0.2), transparent 68%);
+  pointer-events: none;
+}
+
+.interactiveCard {
+  position: relative;
+  z-index: 1;
+}
+
+.visualBlock,
+.tableBlock,
+.resultBox,
+.strandBox,
+.comparison,
+.formulaBox,
+.placeholderSimulation {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.kmerPill,
+.base {
+  transition: transform 140ms ease, background 140ms ease;
+}
+
+.kmerPill:hover,
+.base:hover {
+  transform: translateY(-2px);
+  background: rgba(77, 141, 255, 0.15);
+}
+
+.tableRow span {
+  overflow-wrap: anywhere;
+}
+
+.formulaBox p:last-child,
+.placeholderSimulation p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.skewChart {
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(93, 121, 156, 0.16);
+}
+
+.skewBar {
+  transition: height 160ms ease, transform 160ms ease;
+}
+
+.skewBar:hover {
+  transform: scaleY(1.08);
+}
+
+.interactiveCard {
+  animation: panelEntrance 260ms ease both;
+}
+
+@keyframes panelEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
