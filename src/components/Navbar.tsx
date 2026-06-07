@@ -2,7 +2,7 @@ function Navbar() {
   return (
     <nav className="nav">
       <a className="brand" href="#top">
-        <img src="/logo.png" alt="Bioinformatics Algorithms logo" />
+        <img src={import.meta.env.BASE_URL + "logo.png"} alt="Bioinformatics Algorithms logo" />
         <span>
           <strong>Bioinformatics Algorithms</strong>
           <em>DNA sequence analysis</em>
