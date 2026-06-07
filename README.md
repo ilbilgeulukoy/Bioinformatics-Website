@@ -127,16 +127,6 @@ npm run dev
 
 Then open the local URL shown in the terminal.
 
-## Future Improvements
-
-Planned improvements include:
-
-* Reorganizing Python scripts into a dedicated algorithms folder
-* Adding explanations for each algorithm
-* Creating interactive examples in the web interface
-* Deploying the website with GitHub Pages
-* Adding visual diagrams for k-mers, motif search, and Hamming distance
-* Improving code comments and documentation
 
 ## Author
 
