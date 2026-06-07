@@ -1,3 +1,5 @@
+https://ilbilgeulukoy.github.io/Bioinformatics-Website/
+
 # Bioinfo Algorithms
 
 Bioinfo Algorithms is an educational bioinformatics project that explains core DNA sequence analysis algorithms with Python implementations and beginner-friendly examples.
