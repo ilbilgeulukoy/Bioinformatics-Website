@@ -128,10 +128,3 @@ Start the development server:
 npm run dev
 
 Then open the local URL shown in the terminal.
-
-
-## Author
-
-Created by Ilbilge Ulukoy.
-
-This project was built as a bioinformatics learning and portfolio project, combining Python programming, sequence analysis, and educational web development.
